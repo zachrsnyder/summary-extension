@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "I Ain't Readin Allat",
+  "version": "1.0.0",
+  "description": "A Chrome Extension that simplifies reading tasks.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "action": {
+    "default_popup": "public/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.bundle.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "dist/backend.bundle.js"
+  }
+}
+
+  
