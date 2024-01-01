@@ -3,6 +3,7 @@ import OpenAI from 'openai'
 /*This asynchronous function makes a call to chat gpt using the OpenAI API. It uses try-catch to process any errors that may occur in the usage of the API. Upon success the function returns the generated summary. Upon failure it returns an error message.*/
 async function callAPI(paragraph) {
   const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true })
+  /*This API Key is no longer in use.*/
     try{
       const completion = await openai.chat.completions.create({
         messages: [
