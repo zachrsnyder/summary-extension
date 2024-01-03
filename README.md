@@ -21,3 +21,16 @@ This was also a subproblem in my teams' tigerhacks project this year: [The Other
 - Used in chrome extension (like this one) to provide the browser with essential metadata that gives information into how the files are to be interpreted.
 - There are three versions of manifest with different key-value requirements. For this application the most recent version was used.
 - Some of the important members:
+  * "permissions": gave myself access to the current tab of the window of chrome as well as access to the clipboard (copy and paste).
+  * "default_popup": the html file that contains the content of the popup window. (which has my index.js linked inside).
+  * "content_scripts": I have one bundled content script that is to be applied to all urls (although its use is only for some urls).
+  * "background"/"service_worker": this bundled script has essentially no content but it starts upon upon opening of the window and has access to no DOMs.
+
+#### Package.json
+
+- Used in Node.js projects to manage dependencies (as found in node_modules), some metadata similar to the manifest file, as well as some scripts that can be used to build (puts package manager to work), start the project, or test it.
+- Some of my uses:
+  * "build" 
+
+
+
