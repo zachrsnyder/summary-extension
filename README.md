@@ -10,7 +10,7 @@ The problem is rooted in laziness. I do not like to read, especially about polit
 #### The solution:
 So to make that task, that I feel as though I should do, a little easier, I wanted to make a chrome extension that could summarize and shorten the passage I was reading. I had used ChatGpt to generate summaries for me in the past so I knew it was legit and could be used to create a good solution to my problem.
 
-This was also a subproblem in my teams' tigerhacks project this year: [The Otherside](https://github.com/aaron-yang799/tiger-hacks), but we had no experience with web development prior to that so not much was accomplished. However, the idea and attempt got us 6th place!.
+This was also a subproblem in my teams' tigerhacks project this year: [The Otherside](https://github.com/aaron-yang799/tiger-hacks), but we had no experience with web development prior to that so not much was accomplished. However, the idea and attempt got us 6th place!
 
 --------------
 
@@ -47,6 +47,8 @@ This folder contains my JavaScipt code as well as an assets folder containing al
 
 ##### content.js
 
+- content scripts are useful because they can manipulate and scrape from the DOM of the html you are accessing on the web. So, that is exactly what this script is doing.
+- Upon receiving a message from the popup script (index.js), this script scrapes the information essential for the summary (the body paragraphs and the title).
 - 
 
 
