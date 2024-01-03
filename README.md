@@ -30,7 +30,10 @@ This was also a subproblem in my teams' tigerhacks project this year: [The Other
 
 - Used in Node.js projects to manage dependencies (as found in node_modules), some metadata similar to the manifest file, as well as some scripts that can be used to build (puts package manager to work), start the project, or test it.
 - Some of my uses:
-  * "build" 
+  * "build": build commands can do a lot of things such as compile code into machine code or run quality tests. My purpose for the build command is to utilize the webpack package manager to bundle my code and its dependencies together. Bundled code can be found in the dist folder.
+  * "dependencies": These are essentially the outsourced things my code uses. The "openai" depency is the big ticket item here because that is how the summary was generated. I did not use a .env file because it caused some problems I didn't really feel like working around with webpack and some things within the dotenv module.
+  * "devDependencies": In here are some loaders that I used. Loaders are used to transform the source code of certain things like style sheets and images so that they can be bundled. Webpack (the bundler) is also listed as a dependency.
+
 
 
 
