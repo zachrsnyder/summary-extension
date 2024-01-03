@@ -2,10 +2,8 @@
   "name": "summary-extension",
   "version": "1.0.0",
   "description": "Chrome extension that utilizes chatGpt API to summarize webpages",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node content.js",
     "build": "webpack"
   },
   "author": "Zach Snyder",
