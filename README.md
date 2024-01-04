@@ -24,7 +24,7 @@ This was also a subproblem in my teams' tigerhacks project this year: [The Other
   * "permissions": gave myself access to the current tab of the window of chrome as well as access to the clipboard (copy and paste).
   * "default_popup": the html file that contains the content of the popup window. (which has my index.js linked inside).
   * "content_scripts": I have one bundled content script that is to be applied to all urls (although its use is only for some urls).
-  * "background"/"service_worker": this bundled script has essentially no content but it starts upon upon opening of the window and has access to no DOMs.
+  * "background"/"service_worker": this bundled script has essentially no content but it starts upon opening of the window and has access to no DOMs.
 
 #### package.json
 
@@ -49,7 +49,21 @@ This folder contains my JavaScipt code as well as an assets folder containing al
 
 - content scripts are useful because they can manipulate and scrape from the DOM of the html you are accessing on the web. So, that is exactly what this script is doing.
 - Upon receiving a message from the popup script (index.js), this script scrapes the information essential for the summary (the body paragraphs and the title).
-- 
+- A prompt is constructed and passed to the "callAPI" asynchronous function where the program waits for the eventual response from GPT using gpt-3.5-turbo.
+  * I have been having issues with extensive wait times in generating summaries on occasion. I have not yet run testing to see where the hold up is but I am assuming it is rooted in the chat completion. Other suspect is the chrome.tabs.query in the index.js file, but the query's params narrow it down to one obvious tab (the current one!).
+- The summary is then sent back to index.js using sendResponse.
+
+##### index.js
+
+- Once index.html is opened (the extension is opened) the asynchronous "beginQuery" function is invoked.
+- Chrome.tabs.query is used to find the active tab of the current instance of chrome via a Promise object.
+- Then, similarly, a Promise object is used to send a message to the content script telling it that it is time to scrape.
+- After the wait is over and a response has been returned, the response is checked for legitimacy.
+- If it is valid, then the summary is sent to manipulateDOM. If it is invalid, then an error message is sent instead.
+- manipulateDOM does a lot of self explanatory DOM manipulate as well as creating an event listener for when the #body elemenent is pressed.
+- When that element is pressed prompt to reveal the summary is deleted and the summary is displayed. The copy to clipboard button is then revealed and it's event listener is added.
+
+
 
 
 
