@@ -65,18 +65,3 @@ This folder contains my JavaScipt code as well as an assets folder containing al
 
 ---------------------
 
-## Usage
-
-There are some things intentionally left out of this repository. If you want to try this out for yourself there are some things to do first.
-
-- This is a Node.js project and uses node modules. So Node.js will need to be installed.
-- Once it's installed, you can use the "npm i" command to download all of the necessary modules (they are listed in package.json and that is how it'll know what to install).
-- Then, you need to go onto OpenAi's website and get an api key and replace the inactive on that is in content.js.
-- Because that was just changed, you need to change the build of content done by webpack to match that key. This can be done with "npm run build".
-- Then go to chrome, click on the extension icon, click manage extension, turn on developer mode, then click load unpacked and insert the folder with all of the files in it.
-
-
-
-
-
-
